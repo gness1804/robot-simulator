@@ -22,6 +22,12 @@ export class Robot {
   }
 
   place(options: Options) {
+    if (options.direction !== 'north'
+      && options.direction !== 'south'
+      && options.direction !== 'east'
+      && options.direction !== 'west') {
+        throw new InvalidInputError('Invalid direction: ' + options.direction);
+    }
     this._coordinates = [options.x, options.y];
     this._bearing = options.direction;
   }

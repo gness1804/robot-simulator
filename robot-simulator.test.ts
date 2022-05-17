@@ -46,6 +46,7 @@ describe('Robot', () => {
       const robot = new Robot()
 
       expect(InvalidInputError.prototype).toBeInstanceOf(Error)
+      //@ts-ignore: intentionally wrong for testing purposes
       expect(() => robot.place({ direction: 'crood', x: 0, y: 0 })).toThrow(
         InvalidInputError
       )
